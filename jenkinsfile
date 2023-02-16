@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        //dockerfile true
+        docker { image 'priyasivath/jenkins-ubuntu-agent:dockerfile.0.4' }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh ''' git --version
+                        curl --version '''
+            }
+        }
+    }
+}
