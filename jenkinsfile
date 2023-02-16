@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh ''' git --version
-                        curl --version '''
+                        go build ./...'''
             }
         }
     }
