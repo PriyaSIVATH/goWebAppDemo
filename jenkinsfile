@@ -15,5 +15,9 @@ pipeline {
                         go build ./...'''
             }
         }
+        stage('archive') {
+             steps {
+                archiveArtifacts(artifacts: 'jenkins_workspace/goWebAppDemo/golang-gin-realworld-example-app.zip', followSymlinks: false)
+      }
     }
 }
