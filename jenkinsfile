@@ -17,7 +17,7 @@ pipeline {
         }
         stage('archive') {
              steps {
-                archiveArtifacts(artifacts: 'goWebAppDemo/*', followSymlinks: false)
+                archiveArtifacts(artifacts: '**/*', followSymlinks: false)
       }
     }
 }
