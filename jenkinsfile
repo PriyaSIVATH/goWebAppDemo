@@ -17,7 +17,7 @@ pipeline {
         }
         stage('archive') {
              steps {
-                archiveArtifacts(artifacts: 'goWebAppDemo/golang-gin-realworld-example-app', followSymlinks: false)
+                archiveArtifacts(artifacts: 'goWebAppDemo/*', followSymlinks: false)
       }
     }
 }
