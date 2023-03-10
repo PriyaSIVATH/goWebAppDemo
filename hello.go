@@ -69,7 +69,7 @@ func main() {
 	//}).First(&userAA)
 	//fmt.Println(userAA)
 
-	// r.Run() // listen and serve on 0.0.0.0:8080
-	r.Run(":8000") 	// how can i change default port as 8080 in golang web application
+	r.Run() // listen and serve on 0.0.0.0:8080
+	// r.Run(":8000") 	// how can i change default port as 8080 in golang web application
 			//https://stackoverflow.com/questions/74179363/how-to-modify-the-default-port-of-go-gin-my-8080-port-is-in-use
 }
