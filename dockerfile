@@ -1,23 +1,22 @@
-# Dockerfile copy from AvinashKumar - The Learning Destination
+FROM golang:1.16-alpine
 
-FROM ubuntu:latest
+# Set destination for COPY
+WORKDIR /app
 
-RUN apt update && apt install openssh-server sudo -y
+# Download Go modules
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
 
-RUN sudo apt install -y openjdk-11-jdk
+COPY *.go ./
 
-RUN sudo apt install -y git
+# Build
+# RUN go build -o /docker-gs-ping
 
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 jenkins
+EXPOSE 8080
 
-RUN echo 'jenkins:jenkins' | chpasswd
+#ENV HTTP_PORT=8081
 
-RUN service ssh start
-
-EXPOSE 22
-
-WORKDIR /home/ubuntu/priya/jenkins_workspace
-
-RUN sudo chmod 777 /home/ubuntu/priya/jenkins_workspace
-
+# Run
+# CMD [ "/docker-gs-ping" ]
 
