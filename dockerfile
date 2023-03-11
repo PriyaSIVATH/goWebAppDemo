@@ -12,7 +12,8 @@ COPY *.go ./
 
 # Build
 #RUN go build -o /goWebAppDemo
-RUN go build ./...
+#RUN go build ./...
+RUN go build
 
 EXPOSE 8080
 
